@@ -1,0 +1,28 @@
+name = str(input("Enter name: "))
+key =  int(input("Enter key 1 -10 : "))
+letters = "abcdefghijklmnopqrstuvwyz123456789 "
+out = ''
+mode = str(input("Enter mode e or d: "))
+
+
+#encryption
+for char in name:
+    inpindex = letters.find(char)
+    if mode == "e":
+     print("ENCRYPTING WORDS.........")
+     newinpindex = inpindex + key
+     out += letters[newinpindex]
+
+    elif mode == "d":
+      print("DECRYPTING WORDS.........")
+      newinpindex = inpindex - key
+      out += letters[newinpindex]
+
+
+
+    if newinpindex > len(letters):
+        newinpindex = newinpindex-len(letters)
+    elif newinpindex < 0:
+        newinpindex = newinpindex+len(letters)
+
+print(out)
